@@ -1,0 +1,15 @@
+procedure TIndicator.Draw; 
+var 
+ Color: Byte; Frame: Char; 
+ L: array[0..1] of Longint; 
+ S: String[15]; 
+ B: TDrawBuffer; 
+Begin 
+ if State and sfDragging = 0 then Color := GetColor(1); 
+ else 
+ MoveChar(B, Frame, Color, Size.X); 
+ if Modified then WordRec(B[0].Lo := 15; 
+ FormatStr(S, ' %d:%d ', L); 
+ MoveStr(B[8 - Pos(':', S)], S, Color); 
+ WriteBuf(0, 0, Size.X, 1, B); 
+End;
